@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Debate Stat Tracker</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <link rel="icon" href="{{url_for('static', filename='surfingdebatedude.ico')}}" sizes="any" type="image/svg+xml">
+</head>
+<body style="background-color:#99caff;">
+    <div>
+<label class="title">DebateStat</label>
+        <div class="navbar-section">
+    <h1 class="nav-item"><a href="/"><type="button" class="block">Team</button></a></h1>
+    <h1 class="nav-item"><a href="/ind"><type="button" class="block">Individual</button></a></h1>
+    <h1 class="nav-item"><a href="/aboutus"><type="button" class = "block">About Us</button></a></h1>
+    <h1 class="nav-item"><a href="mailto:support@debatestat.com">Contact Us</a></h1>
+</div>
+    </div>
+<style>
+    /* Add a light black background color to the top navigation */
+/*.topnav {*/
+/*  list-style-type: none;*/
+/*  overflow: hidden;*/
+/*  background-color: #4da6ff;*/
+/*}*/
+/* Style the links inside the navigation bar */
+/*.topnav a {*/
+/*  float: right;*/
+/*  position: relative;*/
+/*  left: -32.75%;*/
+/*  display: block;*/
+/*  background-color: #4da6ff;*/
+/*  color: #FFFFFF;*/
+/*  opacity: 50%;*/
+/*  text-align: center;*/
+/*  text-decoration: none;*/
+/*  padding: 8px 10px;*/
+/*  font-size: 25px;*/
+/*  transition-duration: 0.25s;*/
+/*}*/
+
+/* Change the color of links on hover */
+/*.topnav a:hover {*/
+/*  color: #FFFFFF;*/
+/*  opacity: 100%;*/
+/*  text-decoration: underline;*/
+/*}*/
+
+/* Add a color to the active/current link */
+/*.topnav a:active {*/
+/*   color: #FFFFFF;*/
+/*   text-decoration: underline;*/
+/*}*/
+/*h {*/
+/*    left: 20.3px;*/
+/*	top: 24px;*/
+/*	position: absolute;*/
+/*	overflow: visible;*/
+/*	width: 591px;*/
+/*	height: 139px;*/
+/*	text-align: center;*/
+/*	font-family: Avenir;*/
+/*	font-style: normal;*/
+/*	font-weight: normal;*/
+/*	font-size: 67px;*/
+/*	color: rgba(255,255,255,1);*/
+/*	text-transform: capitalize;*/
+/*	width: 100%;*/
+/*	min-height: 30px;*/
+/*	display: inline-block;*/
+/*	text-align: center;*/
+/*	margin: 0 auto;*/
+/*}*/
+h1 {
+	text-align: center;
+	font-family: Avenir;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+}
+@viewport {
+  width: device-width ;
+  zoom: 1.0 ;
+}
+</style>
+<style type="text/css">
+
+    th:tr{
+        color: blue;
+
+    }
+    tr:nth-of-type(2n){
+        border: 1px solid black;
+        background-color: rgba(150, 150, 150, 0.5);
+
+    }
+
+    td{
+        padding: 8px 8px;
+        border: 1px solid black;
+    }
+</style>
+<style type="text/css">
+
+    th:tr{
+        color: blue;
+
+    }
+    tr:nth-of-type(2n){
+        border: 1px solid black;
+        background-color: rgba(150, 150, 150, 0.5);
+
+    }
+
+    td{
+        padding: 8px 8px;
+        border: 1px solid black;
+    }
+.fix{
+    position:fixed;
+    bottom:0px;
+    left:0%;
+}
+
+.navbar-section{
+    margin-top:25px;
+    display: flex;
+    flex-wrap: wrap;
+    /*margin-left: 25%;*/
+    justify-content:center;
+
+}
+.title{
+    font-size: 60px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    font-family: Avenir;
+}
+.nav-item{
+    margin-left: 10px;
+}
+.nav-item a{
+    color:#000000;
+    text-decoration: none;
+}
+.nav-item:hover{
+    text-decoration: underline;
+}
+
+
+
+
+ @media only screen and (max-width : 420px) {
+     .navbar-section{
+        margin-top: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column;
+     }
+
+    }
+
+    /* Extra Small Devices, Phones */
+    @media only screen and (min-width : 480px) {
+
+    }
+</style>
+<br>
+<br>
+<form style="text-align: center;" method = "POST">
+    <h1><span style="font-weight: normal;text-decoration: underline;"><b>Individual</b></span></h1>
+    <h1>Debater's Full Name</h1>
+    <input size="22" style="height:26px;font-size:16pt;font-family: Avenir" name = "secone">
+    <br>
+    <br>
+    <br>
+<input size="25" style="height:29px;font-size:14pt;background-color:#3333ff;font-family: Avenir;font-weight: bold;color:#FFFFFF" type = "submit"></form>
+<br>
+<!-- For loop logic of jinja template -->
+{%for x in lifeurldic%}
+  <table style="margin-left: 20px;">
+<!-- Table headers -->
+    <th>
+        <tr style="color: black; ">
+        <td>Number of Rounds</td>
+        <td>URL</td>
+        <td>Event</td>
+</tr>
+    </th>
+<!-- table rows -->
+<tr>
+    <td>{{x}}</td>
+    <td><a href={{lifeurldic[x]}}>{{lifeurldic[x]}}</a></td>
+    <td>{{urlwithevent[x]}}</td>
+
+{%endfor%}
+
+</tr>
+
+</table>
+<!-- <ol>
+{%for i in url_tuple%}
+ <ul><a href={{i}}>{{i}}</a></ul>
+{%endfor%}
+<p>{{lifetimerecord}}</p>
+</ol>
+ <a href ={{theurl}} >{{theurl}}</a>
+<!--<<p>{{lifetimerecord}}</p>
+<p>{{lifetimepe}}</p>
+<p>{{lifetimeelim}}</p>
+<p>{{lifetimeelimpe}}</p> -->
+
+
+
+</body>
+</html>
