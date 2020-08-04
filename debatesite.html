@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<head>
+    <title>DebateStat</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="icon" href="{{url_for('static', filename='surfingdebatedude.ico')}}" sizes="any" type="image/svg+xml">
+</head>
+<body style="background-color: #99caff; background-size: 100%;" >
+<div>
+<label class="title">DebateStat</label>
+<div class="navbar-section">
+    <h1 class="nav-item"><a href="/"><type="button" class="block" style="color: #000000">Team  </button></a></h1>
+    <h1 class="nav-item"><a href="/ind"><type="button" class="block" style="color: #000000">Individual  </button></a></h1>
+    <h1 class="nav-item"><a href="/aboutus"><type="button" class = "block" style="color: #000000">About Us  </button></a></h1>
+    <h1 class="nav-item"><a href="mailto:support@debatestat.com" style="color: #000000">Contact Us  </a></h1>
+</div>
+</div>
+<style>
+    /* Add a light black background color to the top navigation */
+/*.topnav {*/
+/*  list-style-type: none;*/
+/*  overflow: hidden;*/
+/*  background-color: #4da6ff;*/
+/*  text-align: center;*/
+/*}*/
+/* Style the links inside the navigation bar */
+/*.topnav a {*/
+/*  float: right;*/
+/*  position: relative;*/
+/*  left: -32.75%;*/
+/*  display: block;*/
+/*  background-color: #4da6ff;*/
+/*  color: #FFFFFF;*/
+/*  opacity: 50%;*/
+/*  text-align: center;*/
+/*  text-decoration: none;*/
+/*  padding: 8px 10px;*/
+/*  font-size: 25px;*/
+/*  transition-duration: 0.25s;*/
+/*}*/
+
+/* Change the style of links on hover */
+/*.topnav a:hover {*/
+/*  color: #FFFFFF;*/
+/*  opacity: 100%;*/
+/*  text-decoration: underline;*/
+/*}*/
+
+/* Add a color to the active/current link */
+/*.topnav a:active {*/
+/*   color: #FFFFFF;*/
+/*   opacity: 100%;*/
+/*   text-decoration: underline;*/
+/*}*/
+/* header */
+/*h {*/
+/*    left: 20.3px;*/
+/*	top: 24px;*/
+/*	position: absolute;*/
+/*	overflow: visible;*/
+/*	width: 591px;*/
+/*	height: 139px;*/
+/*	text-align: center;*/
+/*	font-family: Avenir;*/
+/*	font-style: normal;*/
+/*	font-weight: normal;*/
+/*	font-size: 67px;*/
+/*	color: rgba(255,255,255,1);*/
+/*	text-transform: capitalize;*/
+/*	width: 100%;*/
+/*	min-height: 30px;*/
+/*	display: inline-block;*/
+/*	text-align: center;*/
+
+/*}*/
+
+h1 {
+	text-align: center;
+	font-family: Avenir;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+}
+
+.navbar-section{
+    margin-top:25px;
+    display: flex;
+    flex-wrap: wrap;
+    /*margin-left: 25%;*/
+    justify-content:center;
+
+}
+.title{
+    font-size: 60px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    font-family: Avenir;
+}
+.nav-item{
+    margin-left: 10px;
+}
+.nav-item a{
+    color: #000000;
+    text-decoration: none;
+
+}
+.nav-item:hover{
+    text-decoration: underline;
+}
+
+
+
+
+ @media only screen and (max-width : 420px) {
+     .navbar-section{
+        margin-top: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column;
+     }
+
+    }
+
+    /* Extra Small Devices, Phones */
+    @media only screen and (min-width : 480px) {
+
+    }
+
+
+</style>
+<br>
+<br>
+<form style="text-align: center;" method = "POST">
+    <h1><span style="text-decoration: underline;"><b>Team</b></span></h1>
+    <h1>First Debater's Full Name</h1>
+    <input size="22" style="height:26px;font-size:16pt;font-family: Avenir" name = "u">
+    <br>
+    <br>
+    <h1>Second Debater's Full Name</h1>
+    <input size="22" style="height:26px;font-size:16pt;font-family: Avenir" name = "t">
+    <br>
+    <br>
+    <br>
+    <input size="25" style="height:29px;font-size:14pt;background-color:#3333ff;color: #FFFFFF;font-family: Avenir;font-weight: bold" type = "submit">
+</form>
+<br>
+<!-- For loop logic of jinja template -->
+{%for x in dupe_dict%}
+  <table style="margin-left: 20px;">
+<!-- Table headers -->
+    <th>
+        <tr style="color: black; ">
+        <td>URLs</td>
+</tr>
+    </th>
+<!-- table rows -->
+<tr>
+    <td>{{dupe_dict[x]}}</td>
+
+{%endfor%}
+
+</tr>
+
+</table>
+<a href ={{theurl}}>{{theurl}}</a>
+<p>{{lifetimetotal}}</p>
+<p>{{lifetimepe}}</p>
+<p>{{lifetimeelim}}</p>
+<p>{{lifetimeelimpe}}</p>
+
+
+</body>
