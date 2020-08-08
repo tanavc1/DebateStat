@@ -46,7 +46,7 @@ def aboutus():
 def my_form_post():
     text = request.form['u']
     texttwo = request.form['t']
-    with open( '/home/tanavc/mysite/debatedata.csv' , 'r') as f:
+    with open( 'debatedata.csv' , 'r') as f:
         second_list_1 = []
         url_list_1 = []
         lifetime_list_1 = []
@@ -75,7 +75,7 @@ def my_form_post():
         locationmax_1 = lifetime_tuple_1.index(highestnumtup_1)
         idbestlocation_1 = second_list_1[locationmax_1]
         besturlone = "https://www.tabroom.com/index/results/team_lifetime_record.mhtml?id1=" + idbestlocation_1
-    with open( '/home/tanavc/mysite/debatedata.csv' , 'r') as f:
+    with open( 'debatedata.csv' , 'r') as f:
         for line in f.readlines():
             if string.capwords(texttwo) in line:
               secondid = line[0:6]
@@ -131,7 +131,7 @@ def my_form_post():
 @app.route('/ind/', methods=['POST']) ## Individual
 def ind_version():
     indtext = request.form['secone']
-    with open('/home/tanavc/mysite/debatedata.csv', 'r') as files:
+    with open('debatedata.csv', 'r') as files:
         second_list = []
         url_list = []
         lifetime_list = []
