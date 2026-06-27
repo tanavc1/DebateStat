@@ -1,5 +1,6 @@
 # DebateStat
-Quickly shows debate statistics such as lifetime record, tournaments records, speaker points and much more for any team to ever compete and for 5 different debate events.
-\nUsed to be at www.debatestat.com.
-\n
+Quick and reliable debater statistics across 5 events and for all.
+
+Used to be at debatestat.com
+
 250k views
