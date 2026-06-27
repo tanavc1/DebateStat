@@ -1,5 +1,5 @@
 # DebateStat
-Quick and reliable debater statistics across 5 events and for all.
+Was quick and reliable debater statistics across 5 events.
 
 Used to be at debatestat.com
 
